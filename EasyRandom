@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+import java.util.Random;
+
+
+public class main {
+	
+	
+	public static void main(String args[]){
+		Random r=new Random();
+		String[] a={"A","B","C","D","E"};
+		Integer[] b={0,0,0,0,0};
+		boolean test=false;
+		int c=0;
+		for(int i=0;i<5;i++){
+			c=r.nextInt(5)+1;
+			for(int j=0;j<5;j++){
+				if (b[j].equals(c)){
+					test=true;
+					break;
+				}
+			}
+			if(test){
+				i--;
+			}else{
+				b[i]=c;
+			}
+			test=false;
+		}
+		System.out.println("******추첨******");
+		for(int i=0;i<5;i++){
+			for(int j=0;j<5;j++){
+				if(b[j].equals(i+1)){
+					if(i==0|i==4){
+						System.out.println("["+a[j]+"]은 "+b[j]+"번째입니다.");
+					}else{
+						System.out.println("["+a[j]+"]는 "+b[j]+"번째입니다.");
+					}
+				}
+			}
+		}
+		
+	}
+}
