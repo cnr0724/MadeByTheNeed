@@ -35,11 +35,7 @@ public class main {
 		for(int i=0;i<l;i++){
 			for(int j=0;j<l;j++){
 				if(b[j].equals(i+1)){
-					if(i==0|i==4){
-						System.out.println("["+a[j]+"]은 "+b[j]+"번째입니다.");
-					}else{
-						System.out.println("["+a[j]+"]는 "+b[j]+"번째입니다.");
-					}
+					System.out.println("["+a[j]+"]은(는) "+b[j]+"번째입니다.");
 				}
 			}
 		}
