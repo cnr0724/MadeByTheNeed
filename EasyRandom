@@ -1,19 +1,23 @@
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 
 public class main {
 	
 	
 	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
 		Random r=new Random();
-		String[] a={"A","B","C","D","E"};
-		Integer[] b={0,0,0,0,0};
+		int l=sc.nextInt();
+		String[] a=new String[l];
+		Integer[] b=new Integer[l];
 		boolean test=false;
 		int c=0;
-		for(int i=0;i<5;i++){
+		for(int i=0;i<l;i++){
+			a[i]=sc.nextLine();
 			c=r.nextInt(5)+1;
-			for(int j=0;j<5;j++){
+			for(int j=0;j<l;j++){
 				if (b[j].equals(c)){
 					test=true;
 					break;
@@ -26,9 +30,10 @@ public class main {
 			}
 			test=false;
 		}
+		sc.close();
 		System.out.println("******추첨******");
-		for(int i=0;i<5;i++){
-			for(int j=0;j<5;j++){
+		for(int i=0;i<l;i++){
+			for(int j=0;j<l;j++){
 				if(b[j].equals(i+1)){
 					if(i==0|i==4){
 						System.out.println("["+a[j]+"]은 "+b[j]+"번째입니다.");
